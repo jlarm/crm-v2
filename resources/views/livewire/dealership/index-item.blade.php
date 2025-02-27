@@ -14,7 +14,7 @@
         </flux:badge>
     </flux:table.cell>
     <flux:table.cell>
-        {{-- <flux:badge size="sm">{{ $dealership->stores()->count() + 1 }}</flux:badge> --}}
+        <flux:badge size="sm">{{ $dealership->stores()->count() + 1 }}</flux:badge>
     </flux:table.cell>
     <flux:table.cell class="text-xs">{{ $dealership->type->label() }}</flux:table.cell>
     <flux:table.cell>
@@ -23,6 +23,6 @@
         @endforeach
     </flux:table.cell>
     <flux:table.cell>
-        {{-- <a wire:navigate href="{{ route('dealership.show', $dealership) }}">View</a> --}}
+        <a wire:navigate href="{{ route('dealership.show', $dealership) }}">View</a>
     </flux:table.cell>
 </flux:table.row>
