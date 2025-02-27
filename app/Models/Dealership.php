@@ -11,6 +11,7 @@ use App\Observers\DealershipObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 #[ObservedBy(DealershipObserver::class)]
 class Dealership extends Model
@@ -36,4 +37,9 @@ class Dealership extends Model
         'in_development' => 'boolean',
         'dev_status' => DevStatus::class,
     ];
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
