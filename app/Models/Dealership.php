@@ -7,9 +7,12 @@ use App\Enum\Rating;
 use App\Enum\State;
 use App\Enum\Status;
 use App\Enum\Type;
+use App\Observers\DealershipObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+#[ObservedBy(DealershipObserver::class)]
 class Dealership extends Model
 {
     use HasFactory;
